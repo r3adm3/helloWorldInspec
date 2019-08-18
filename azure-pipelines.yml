@@ -44,6 +44,7 @@ steps:
     testResultsFiles: '**/testresults.xml'
 
 - task: PublishBuildArtifacts@1
+  condition: succeededOrFailed()
   inputs:
     PathtoPublish: 'report.html'
     ArtifactName: 'report'
