@@ -27,7 +27,7 @@ steps:
       
       sudo dpkg -i inspec.deb
 
-      inspec -?
+      inspec --chef-license=accept 
 
 - script: |
     echo Add other tasks to build, test, and deploy your project.
