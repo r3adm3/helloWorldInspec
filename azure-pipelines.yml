@@ -14,7 +14,7 @@ steps:
   displayName: 'Run a one-line script'
 
 - task: Bash@3
-  name: InstallInspec
+  displayName: 'Install Inspec'
   inputs:
     targetType: 'inline'
     script: |
@@ -30,7 +30,3 @@ steps:
       echo '** Accepting License'
       inspec --chef-license=accept 
 
-- script: |
-    echo Add other tasks to build, test, and deploy your project.
-    echo See https://aka.ms/yaml
-  displayName: 'Run a multi-line script'
