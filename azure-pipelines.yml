@@ -25,7 +25,7 @@ steps:
 
       ls -al
       
-      dpkg -i inspec.deb
+      sudo dpkg -i inspec.deb
 
       inspec -?
 
