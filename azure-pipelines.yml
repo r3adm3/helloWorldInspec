@@ -28,3 +28,22 @@ steps:
       echo '** Accepting License'
       inspec --chef-license=accept 
 
+- task: Bash@3
+  displayName: 'Run inspec and generate results'
+  inputs:
+    targetType: 'inline'
+    script: |
+      # Write your commands here
+      
+      inspec exec hello_spec.rb --reporter cli junit:testresults.xml html:report.html
+
+- task: PublishTestResults@2
+  condition: succeededOrFailed()
+  inputs:
+    testResultsFormat: 'JUnit'
+    testResultsFiles: '**/testresults.xml'
+
+- task: PublishBuildArtifacts@1
+  inputs:
+    PathtoPublish: 'report.html'
+    ArtifactName: 'report'
