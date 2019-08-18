@@ -6,3 +6,12 @@ control "world-1.0" do                                # A unique ID for this con
      its('content') { should match 'Hello World' }      # You could just do the "describe file" block if you want. The  
     end                                                 # rest is just metadata, but it's a good habit to get into.
   end
+
+  control "world-2.0" do                                # A unique ID for this control
+    impact 1.0                                          # Just how critical is
+    title "Hello World 2"                                 # Readable by a human
+    desc "Text should include the words 'hello world'." # Optional description
+    describe file('hello2.txt') do                       # The actual test
+     its('content') { should match 'Hello World2' }      # You could just do the "describe file" block if you want. The  
+    end                                                 # rest is just metadata, but it's a good habit to get into.
+  end
