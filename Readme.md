@@ -1,4 +1,4 @@
-This repo is me trying to remember how to use Inspec. 
+This repo is me trying to remember how to use Inspec
 ==
 
 Example Run
